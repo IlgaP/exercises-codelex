@@ -1,13 +1,17 @@
 package io.codelex.typesandvariables.practice;
 
+import java.text.DecimalFormat;
+
 public class VariablesAndNames {
+
+    private static final DecimalFormat dfZero = new DecimalFormat("0.00");
     public static void main(String[] args) {
         int cars;
         int drivers;
         int passengers;
         int carsNotDriven;
         int carsDriven;
-        int  seatsInACar;
+        int seatsInACar;
         int carpoolCapacity;
         double averagePassengersPerCar;
 
@@ -25,6 +29,6 @@ public class VariablesAndNames {
         System.out.println("There will be " + carsNotDriven + " empty cars today.");
         System.out.println("We can transport " + carpoolCapacity + " people today.");
         System.out.println("We have " + passengers + " to carpool today.");
-        System.out.println("We need to put about " + averagePassengersPerCar + " in each car.");
+        System.out.println("We need to put about " + dfZero.format(averagePassengersPerCar) + " in each car.");
     }
 }
