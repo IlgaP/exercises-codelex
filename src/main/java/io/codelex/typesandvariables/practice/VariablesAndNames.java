@@ -3,7 +3,8 @@ package io.codelex.typesandvariables.practice;
 public class VariablesAndNames {
     public static void main(String[] args) {
         int cars;
-        int drivers; passengers;
+        int drivers;
+        int passengers;
         int carsNotDriven;
         int carsDriven;
         int  seatsInACar;
