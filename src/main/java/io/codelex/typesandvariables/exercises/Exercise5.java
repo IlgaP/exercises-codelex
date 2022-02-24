@@ -29,7 +29,7 @@ public class Exercise5 {
             System.out.print("-");
         }
         System.out.println();
-        for(int i = 0; i<8; i++){
+        for(int i = 0; i< courses.length; i++){
             fmt.format("%3s %40s %20s\n","|" + (i+1) + "|", courses[i] +"|", teachers[i] + "|");
 
         }
