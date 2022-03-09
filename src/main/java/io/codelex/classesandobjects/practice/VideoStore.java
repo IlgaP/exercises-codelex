@@ -2,7 +2,6 @@ package io.codelex.classesandobjects.practice;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class VideoStore {
 
@@ -16,7 +15,7 @@ public class VideoStore {
 
     public void checkOutVideo(String title){
         for (Video video : videos) {
-            if (Objects.equals(video.getTitle(), title)) {
+            if (video.title.equals(title)) {
                 video.checkedOut();
                 System.out.println("Video " + video.getTitle() + " checked out");
                 break;
@@ -26,7 +25,7 @@ public class VideoStore {
 
     public void checkInVideo(String title){
         for (Video video : videos) {
-            if (Objects.equals(video.getTitle(), title)) {
+            if (video.title.equals(title)) {
                 video.checkedIn();
                 break;
             }
