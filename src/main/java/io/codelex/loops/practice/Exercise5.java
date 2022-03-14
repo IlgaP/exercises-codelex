@@ -15,13 +15,14 @@ public class Exercise5 {
         second = input.next();
 
         String words = first + second;
-        int count =words.length();
+        int count = words.length();
         int dotCount = 0;
+        int lineLength = 30;
 
-        if(count<=30){
-            dotCount = 30 - count;
+        if (count <= lineLength) {
+            dotCount = lineLength - count;
         }
-        for(int i = 0; i<dotCount; i++){
+        for (int i = 0; i < dotCount; i++) {
             dots += ".";
         }
         System.out.println(first + dots + second);
