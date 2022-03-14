@@ -33,7 +33,7 @@ public class TicTacToe {
                 row = keyboard.nextInt();
                 col = keyboard.nextInt();
 
-                if (row < 0 || row > 2 || col < 0 || col > 2) {
+                if (notValidRowOrCol(row, col)) {
                     System.out.println("Out of bounds! (row - 0,1,2, column - 0,1,2) ");
                 } else if (board[row][col] != '-') {
                     System.out.println("Choose a different location");
@@ -61,6 +61,10 @@ public class TicTacToe {
         displayBoard(board);
     }
 
+    private static boolean notValidRowOrCol(int row, int col) {
+        return row < 0 || row > 2 || col < 0 || col > 2;
+    }
+
     private static void initBoard(char[][] board) {
         // fills up the board with "-"
         for (int r = 0; r < 3; r++)
@@ -78,26 +82,41 @@ public class TicTacToe {
     }
 
     private static char hasWon(char[][] board) {
-        //row
-        for (int r = 0; r < 3; r++) {
-            if (board[r][0] == board[r][1] && board[r][1] == board[r][2] && board[r][0] != '-') {
-                return board[r][0];
-            }
-        }
-        //col
-        for (int c = 0; c < 3; c++) {
-            if (board[0][c] == board[1][c] && board[1][c] == board[2][c] && board[2][c] != '-') {
-                return board[2][c];
-            }
-        }
-        //diagonals
+        Character wonRow = hasWonRow(board);
+        if (wonRow != null) return wonRow;
+        Character wonColumn = HasWonColumn(board);
+        if (wonColumn != null) return wonColumn;
+        Character wonDiagonal = hasWonDiagonal(board);
+        if (wonDiagonal != null) return wonDiagonal;
+        return '-';
+    }
+
+    private static Character hasWonDiagonal(char[][] board) {
         if (board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[0][0] != '-') {
             return board[0][0];
         }
         if (board[2][0] == board[1][1] && board[1][1] == board[0][2] && board[0][2] != '–') {
             return board[0][2];
         }
-        return '-';
+        return null;
+    }
+
+    private static Character HasWonColumn(char[][] board) {
+        for (int c = 0; c < 3; c++) {
+            if (board[0][c] == board[1][c] && board[1][c] == board[2][c] && board[2][c] != '-') {
+                return board[2][c];
+            }
+        }
+        return null;
+    }
+
+    private static Character hasWonRow(char[][] board) {
+        for (int r = 0; r < 3; r++) {
+            if (board[r][0] == board[r][1] && board[r][1] == board[r][2] && board[r][0] != '-') {
+                return board[r][0];
+            }
+        }
+        return null;
     }
 
     private static boolean isTie(char[][] board) {
