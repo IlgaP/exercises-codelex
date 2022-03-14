@@ -11,21 +11,14 @@ public class Exercise6 {
 
         Random rand = new Random();
 
-        for(int i = 0; i < size; i++){
-            array1[i] = rand.nextInt(100)+1;
+        for (int i = 0; i < size; i++) {
+            array1[i] = rand.nextInt(100) + 1;
         }
 
-        for(int i = 0; i < size; i++){
-            array2[i] = array1[i];
-        }
-        array1[size-1] = -7;
+        System.arraycopy(array1, 0, array2, 0, size);
+        array1[size - 1] = -7;
 
         System.out.println(Arrays.toString(array1));
         System.out.println(Arrays.toString(array2));
-
-
-
-
-
     }
 }
