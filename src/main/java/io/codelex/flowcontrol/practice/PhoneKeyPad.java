@@ -9,16 +9,15 @@ public class PhoneKeyPad {
         String str;
         str = input.next().toLowerCase();
 
-        PhoneKeyPad a = new PhoneKeyPad();
         System.out.println("1)");
-        a.phoneKeyPadSwitch(str);
+        phoneKeyPadIf(str);
         System.out.println();
         System.out.println("2)");
-        a.phoneKeyPadIf(str);
+        phoneKeyPadSwitch(str);
 
     }
 
-    private void phoneKeyPadIf(String str) {
+    private static void phoneKeyPadIf(String str) {
         for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i) == 'a' || str.charAt(i) == 'b' || str.charAt(i) == 'c') {
                 System.out.print(2);
@@ -40,7 +39,7 @@ public class PhoneKeyPad {
         }
     }
 
-    private void phoneKeyPadSwitch(String str) {
+    private static void phoneKeyPadSwitch(String str) {
         for (int i = 0; i < str.length(); i++) {
             switch (str.charAt(i)) {
                 case 'a', 'b', 'c' -> System.out.print(2);
