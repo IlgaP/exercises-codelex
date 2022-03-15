@@ -1,4 +1,4 @@
-package io.codelex.oop.Exercise1;
+package io.codelex.oop.shapes;
 
 public class TestShapes {
     public static void main(String[] args) {
