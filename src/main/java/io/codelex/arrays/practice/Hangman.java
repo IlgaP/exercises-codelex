@@ -16,7 +16,7 @@ public class Hangman {
 
         List<Character> playerGuesses = new ArrayList<>();
         List<Character> wrongGuess = new ArrayList<>();
-        int maxMisses = 5;
+        final int maxMisses = 5;
         System.out.println("Guess the word!");
 
         printWordState(wordToGuess, playerGuesses, wrongGuess);
