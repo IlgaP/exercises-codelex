@@ -83,11 +83,17 @@ public class TicTacToe {
 
     private static char hasWon(char[][] board) {
         Character wonRow = hasWonRow(board);
-        if (wonRow != null) return wonRow;
+        if (wonRow != null) {
+            return wonRow;
+        }
         Character wonColumn = HasWonColumn(board);
-        if (wonColumn != null) return wonColumn;
+        if (wonColumn != null) {
+            return wonColumn;
+        }
         Character wonDiagonal = hasWonDiagonal(board);
-        if (wonDiagonal != null) return wonDiagonal;
+        if (wonDiagonal != null) {
+            return wonDiagonal;
+        }
         return '-';
     }
 
