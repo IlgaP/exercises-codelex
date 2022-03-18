@@ -10,15 +10,15 @@ public class Video {
         this.isChecked = true;
     }
 
-    public void checkedOut(){
+    public void checkedOut() {
         isChecked = false;
     }
 
-    public void checkedIn(){
+    public void checkedIn() {
         isChecked = true;
     }
 
-    public void getRating(int rating){
+    public void getRating(int rating) {
         this.rating = rating;
     }
 
@@ -32,5 +32,9 @@ public class Video {
 
     public int getRating() {
         return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
     }
 }

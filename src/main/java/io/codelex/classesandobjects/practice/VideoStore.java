@@ -7,13 +7,13 @@ public class VideoStore {
 
     List<Video> videos = new ArrayList<>();
 
-    public void addVideo(String title, int rating){
+    public void addVideo(String title, int rating) {
         Video video = new Video(title);
         videos.add(video);
-        video.getRating(rating);
+        video.setRating(rating);
     }
 
-    public void checkOutVideo(String title){
+    public void checkOutVideo(String title) {
         for (Video video : videos) {
             if (video.title.equals(title)) {
                 video.checkedOut();
@@ -23,7 +23,7 @@ public class VideoStore {
         }
     }
 
-    public void checkInVideo(String title){
+    public void checkInVideo(String title) {
         for (Video video : videos) {
             if (video.title.equals(title)) {
                 video.checkedIn();
@@ -32,7 +32,7 @@ public class VideoStore {
         }
     }
 
-    public void showAllVideos(){
+    public void showAllVideos() {
         for (Video video : videos) {
             System.out.println("Video: " + video.getTitle());
             System.out.println("Rating: " + video.getRating());

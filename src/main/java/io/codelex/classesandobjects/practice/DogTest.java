@@ -2,28 +2,28 @@ package io.codelex.classesandobjects.practice;
 
 public class DogTest {
     public static void main(String[] args) {
-        Dog dogMax = new Dog("Max", "male");
-        Dog dogRocky = new Dog("Rocky","male");
-        Dog dogSparky = new Dog("Sparky", "male");
-        Dog dogBuster = new Dog("Buster", "male");
-        Dog dogSam = new Dog("Sam", "male");
-        Dog dogLady = new Dog("Lady", "female");
-        Dog dogMolly = new Dog("Molly", "female");
-        Dog dogCoco = new Dog("Coco", "female");
+        Dog dogMax = new Dog("Max", Gender.MALE);
+        Dog dogRocky = new Dog("Rocky", Gender.MALE);
+        Dog dogSparky = new Dog("Sparky", Gender.MALE);
+        Dog dogBuster = new Dog("Buster", Gender.MALE);
+        Dog dogSam = new Dog("Sam", Gender.MALE);
+        Dog dogLady = new Dog("Lady", Gender.FEMALE);
+        Dog dogMolly = new Dog("Molly", Gender.FEMALE);
+        Dog dogCoco = new Dog("Coco", Gender.FEMALE);
 
         System.out.println(dogMax);
 
-        dogMax.mother = dogLady;
-        dogMax.father = dogRocky;
+        dogMax.setMother(dogLady);
+        dogMax.setFather(dogRocky);
 
-        dogCoco.mother = dogMolly;
-        dogCoco.father = dogBuster;
+        dogCoco.setMother(dogMolly);
+        dogCoco.setFather(dogBuster);
 
-        dogRocky.mother = dogMolly;
-        dogRocky.father = dogSam;
+        dogRocky.setMother(dogMolly);
+        dogRocky.setFather(dogSam);
 
-        dogBuster.mother = dogLady;
-        dogBuster.father = dogSparky;
+        dogBuster.setMother(dogLady);
+        dogBuster.setFather(dogSparky);
 
         System.out.println(dogCoco.fathersName());
         System.out.println(dogSparky.fathersName());
