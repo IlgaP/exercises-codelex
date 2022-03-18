@@ -6,8 +6,7 @@ import java.util.Scanner;
 
 public class VideoStoreTest {
     private static final int COUNT_OF_MOVIES = 3;
-    static VideoStore vs = new VideoStore();
-
+    static VideoStore videoStore = new VideoStore();
 
 
     public static void main(String[] args) {
@@ -41,18 +40,18 @@ public class VideoStoreTest {
             String movieName = scanner.nextLine();
             System.out.println("Enter rating");
             int rating = scanner.nextInt();
-            vs.addVideo(movieName, rating);
+            videoStore.addVideo(movieName, rating);
 
 
         }
     }
 
     private static void rentVideo(Scanner scanner) {
-        vs.showAllVideos();
+        videoStore.showAllVideos();
         System.out.println("Enter movie to rent: ");
         String video = scanner.next();
         video += scanner.nextLine();
-        vs.checkOutVideo(video);
+        videoStore.checkOutVideo(video);
 
 
     }
@@ -61,7 +60,7 @@ public class VideoStoreTest {
         System.out.println("Enter movie to return: ");
         String video = scanner.next();
         video += scanner.nextLine();
-        vs.checkInVideo(video);
-        vs.showAllVideos();
+        videoStore.checkInVideo(video);
+        videoStore.showAllVideos();
     }
 }
