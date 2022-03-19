@@ -107,37 +107,40 @@ public class CarService {
         List<Car> carListByManufacturer = manufacturedBy(manufacturer);
         List<Car> list = new ArrayList<>();
         for (Car car : carListByManufacturer) {
-            switch (operator) {
-                case "<":
-                    if (car.getYearOfManufacture() < year) {
-                        list.add(car);
-                    }
-                    break;
-                case ">":
-                    if (car.getYearOfManufacture() > year) {
-                        list.add(car);
-                    }
-                    break;
-                case "<=":
-                    if (car.getYearOfManufacture() <= year) {
-                        list.add(car);
-                    }
-                    break;
-                case ">=":
-                    if (car.getYearOfManufacture() >= year) {
-                        list.add(car);
-                    }
-                    break;
-                case "=":
-                    if (car.getYearOfManufacture() == year) {
-                        list.add(car);
-                    }
-                    break;
-                case "!=":
-                    if (car.getYearOfManufacture() != year) {
-                        list.add(car);
-                    }
-                    break;
+            for (Manufacturer carManufacturer : car.getManufacturer()) {
+                switch (operator) {
+                    case "<":
+                        if (carManufacturer.getYearOfEstablishment() < year) {
+                            list.add(car);
+                        }
+                        break;
+                    case ">":
+                        if (carManufacturer.getYearOfEstablishment() > year) {
+                            list.add(car);
+                        }
+                        break;
+                    case "<=":
+                        if (carManufacturer.getYearOfEstablishment() <= year) {
+                            list.add(car);
+                        }
+                        break;
+                    case ">=":
+                        if (carManufacturer.getYearOfEstablishment() >= year) {
+                            list.add(car);
+                        }
+                        break;
+                    case "=":
+                        if (carManufacturer.getYearOfEstablishment() == year) {
+                            list.add(car);
+                        }
+                        break;
+                    case "!=":
+                        if (carManufacturer.getYearOfEstablishment() != year) {
+                            list.add(car);
+                        }
+                        break;
+                }
+
             }
         }
 

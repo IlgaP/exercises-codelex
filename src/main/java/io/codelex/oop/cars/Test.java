@@ -15,13 +15,13 @@ public class Test {
 
 
         Car car1 = new Car("Mercedes-Benz", "GLC", 52925, 2022, EngineType.V8, new ArrayList<>());
-        car1.setManufacturer(mercedes);
-        car1.setManufacturer(fiat);
+        car1.setManufacturer(mercedes); // 1883
+        car1.setManufacturer(fiat); // 1899
 
         Car car2 = new Car("Mercedes-Benz", "AMG", 200000, 2022, EngineType.V12, new ArrayList<>());
-        car2.setManufacturer(mercedes);
-        car2.setManufacturer(renault);
-        car2.setManufacturer(peugeot);
+        car2.setManufacturer(mercedes); // 1883
+        car2.setManufacturer(renault); // 1899
+        car2.setManufacturer(peugeot); // 1810
 
         Car car3 = new Car("Renault", "Megane", 1500, 2006, EngineType.S3, new ArrayList<>());
         car3.setManufacturer(renault);
