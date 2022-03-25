@@ -36,8 +36,8 @@ public class FibonacciSequenceTest {
     }
 
     @Test
-    void testIncorrectIndex(){
+    void testIncorrectIndex() {
         FibonacciSequence sequence = new FibonacciSequence();
-        Exception e = Assertions
+        //Exception e = Assertions
     }
 }
