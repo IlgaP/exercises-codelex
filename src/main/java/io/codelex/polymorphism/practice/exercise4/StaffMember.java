@@ -29,4 +29,4 @@ abstract public class StaffMember {
     // employee.
     //-----------------------------------------------------------------
     public abstract double pay();
-} 
+}
