@@ -1,7 +1,7 @@
-package io.codelex.test;
+package io.codelex.test.func;
 
 @FunctionalInterface
 public interface MyAdvancedFunction<T> {
 
-    int calculate(Integer a);
+    T calculate(T param);
 }
