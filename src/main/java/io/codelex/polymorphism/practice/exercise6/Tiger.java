@@ -1,29 +1,31 @@
 package io.codelex.polymorphism.practice.exercise6;
 
-public class Mouse extends Mammal {
+public class Tiger extends Felime {
+    String livingRegion;
 
-    public Mouse(String animalName, double animalWeight, String livingRegion) {
+    public Tiger(String animalName, double animalWeight, String livingRegion) {
         super(animalName, animalWeight, livingRegion);
+        this.livingRegion = livingRegion;
     }
 
     @Override
     public void makeSound() {
-        System.out.println("pip-pip");
+        System.out.println("Roarrr!!");
     }
-
 
     @Override
     public void eat(Food food, int quantity) {
-        if (!(food instanceof Vegetable)) {
-            System.out.println("Mice are not eating that type of food!");
+        if (!(food instanceof Meat)) {
+            System.out.println("Tigers are not eating that type of food!");
         } else {
             food.quantity = quantity;
         }
+
     }
 
     @Override
     public String toString() {
-        String result = "Cat [";
+        String result = "Tiger [";
         result += super.toString();
         return result;
     }

@@ -1,6 +1,11 @@
 package io.codelex.polymorphism.practice.exercise6;
 
 public class Zebra extends Mammal {
+
+    public Zebra(String animalName, double animalWeight, String livingRegion) {
+        super(animalName, animalWeight, livingRegion);
+    }
+
     @Override
     public void makeSound() {
         System.out.println("hae-hae");
@@ -13,5 +18,12 @@ public class Zebra extends Mammal {
         } else {
             food.quantity = quantity;
         }
+    }
+
+    @Override
+    public String toString() {
+        String result = "Cat [";
+        result += super.toString();
+        return result;
     }
 }
