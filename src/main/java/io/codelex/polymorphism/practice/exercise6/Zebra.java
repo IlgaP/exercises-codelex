@@ -16,13 +16,13 @@ public class Zebra extends Mammal {
         if (!(food instanceof Vegetable)) {
             System.out.println("Zebras are not eating that type of food!");
         } else {
-            food.quantity = quantity;
+            foodEaten = quantity;
         }
     }
 
     @Override
     public String toString() {
-        String result = "Cat [";
+        String result = "Zebra ";
         result += super.toString();
         return result;
     }
