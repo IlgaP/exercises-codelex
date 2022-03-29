@@ -17,13 +17,13 @@ public class Mouse extends Mammal {
         if (!(food instanceof Vegetable)) {
             System.out.println("Mice are not eating that type of food!");
         } else {
-            food.quantity = quantity;
+            foodEaten = quantity;
         }
     }
 
     @Override
     public String toString() {
-        String result = "Cat [";
+        String result = "Mouse ";
         result += super.toString();
         return result;
     }

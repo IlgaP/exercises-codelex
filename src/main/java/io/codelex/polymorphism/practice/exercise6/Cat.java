@@ -16,7 +16,7 @@ public class Cat extends Felime {
 
     @Override
     public void eat(Food food, int quantity) {
-        food.quantity = quantity;
+        foodEaten = quantity;
 
     }
 
@@ -30,9 +30,9 @@ public class Cat extends Felime {
 
     @Override
     public String toString() {
-        String result = "Cat [";
+        String result = "Cat " + getAnimalType();
         result += super.toString();
-        result += " " + breed + " ]";
+        result += " " + breed;
         return result;
     }
 }

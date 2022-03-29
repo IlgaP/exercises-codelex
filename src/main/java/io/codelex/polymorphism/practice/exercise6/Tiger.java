@@ -18,14 +18,14 @@ public class Tiger extends Felime {
         if (!(food instanceof Meat)) {
             System.out.println("Tigers are not eating that type of food!");
         } else {
-            food.quantity = quantity;
+            foodEaten = quantity;
         }
 
     }
 
     @Override
     public String toString() {
-        String result = "Tiger [";
+        String result = "Tiger ";
         result += super.toString();
         return result;
     }
