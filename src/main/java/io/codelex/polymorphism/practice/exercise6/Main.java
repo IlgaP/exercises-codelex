@@ -20,75 +20,47 @@ public class Main {
             if (animalInfo.length == 5 || animalType.equals("Cat")) {
                 catBreed = animalInfo[4];
             }
-            //Animal currentAnimal = null;
 
             if (animalType.equals("Mouse")) {
                 Mouse mouse = new Mouse(animalName, animalWeight, animalLivingRegion);
                 mouse.makeSound();
-                String foodInput = input.nextLine();
-                String[] foodInfo = foodInput.split(" ");
-                String foodType = foodInfo[0];
-                int foodQuantity = Integer.parseInt(foodInfo[1]);
-                if (foodType.equals("Vegetable")) {
-                    Vegetable vegetable = new Vegetable(foodQuantity);
-                    mouse.eat(vegetable, foodQuantity);
-                } else {
-                    Meat meat = new Meat(foodQuantity);
-                    mouse.eat(meat, foodQuantity);
-                }
+                feed(input, mouse);
                 animals.add(mouse);
             }
             if (animalType.equals("Cat")) {
                 Cat cat = new Cat(animalName, animalWeight, animalLivingRegion, catBreed);
                 cat.makeSound();
-                String foodInput = input.nextLine();
-                String[] foodInfo = foodInput.split(" ");
-                String foodType = foodInfo[0];
-                int foodQuantity = Integer.parseInt(foodInfo[1]);
-                if (foodType.equals("Vegetable")) {
-                    Vegetable vegetable = new Vegetable(foodQuantity);
-                    cat.eat(vegetable, foodQuantity);
-                } else {
-                    Meat meat = new Meat(foodQuantity);
-                    cat.eat(meat, foodQuantity);
-                }
+                feed(input, cat);
                 animals.add(cat);
             }
             if (animalType.equals("Tiger")) {
                 Tiger tiger = new Tiger(animalName, animalWeight, animalLivingRegion);
                 tiger.makeSound();
-                String foodInput = input.nextLine();
-                String[] foodInfo = foodInput.split(" ");
-                String foodType = foodInfo[0];
-                int foodQuantity = Integer.parseInt(foodInfo[1]);
-                if (foodType.equals("Vegetable")) {
-                    Vegetable vegetable = new Vegetable(foodQuantity);
-                    tiger.eat(vegetable, foodQuantity);
-                } else {
-                    Meat meat = new Meat(foodQuantity);
-                    tiger.eat(meat, foodQuantity);
-                }
+                feed(input, tiger);
                 animals.add(tiger);
             }
             if (animalType.equals("Zebra")) {
                 Zebra zebra = new Zebra(animalName, animalWeight, animalLivingRegion);
                 zebra.makeSound();
-                String foodInput = input.nextLine();
-                String[] foodInfo = foodInput.split(" ");
-                String foodType = foodInfo[0];
-                int foodQuantity = Integer.parseInt(foodInfo[1]);
-                if (foodType.equals("Vegetable")) {
-                    Vegetable vegetable = new Vegetable(foodQuantity);
-                    zebra.eat(vegetable, foodQuantity);
-                } else {
-                    Meat meat = new Meat(foodQuantity);
-                    zebra.eat(meat, foodQuantity);
-                }
+                feed(input, zebra);
                 animals.add(zebra);
-
             }
 
             System.out.println(animals);
+        }
+    }
+
+    private static void feed(Scanner input, Animal animal) {
+        String foodInput = input.nextLine();
+        String[] foodInfo = foodInput.split(" ");
+        String foodType = foodInfo[0];
+        int foodQuantity = Integer.parseInt(foodInfo[1]);
+        if (foodType.equals("Vegetable")) {
+            Vegetable vegetable = new Vegetable(foodQuantity);
+            animal.eat(vegetable, foodQuantity);
+        } else {
+            Meat meat = new Meat(foodQuantity);
+            animal.eat(meat, foodQuantity);
         }
     }
 }
