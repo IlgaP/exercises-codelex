@@ -2,8 +2,8 @@ package io.codelex.classesandobjects.practice;
 
 public class CarChanged {
 
-    private static final double CONS_5 = 5.0;
-    private static final double CONS_15 = 15.0;
+    private static final double MAX_ECONOMY_CONSUMPTION = 5.0;
+    private static final double MIN_ECONOMY_CONSUMPTION = 15.0;
     private double startKilometers;
     private double liters;
     private double currentKilometers;
@@ -22,11 +22,11 @@ public class CarChanged {
 
     public boolean gasHog() {
 
-        return (calculateConsumption() < CONS_5);
+        return (calculateConsumption() < MAX_ECONOMY_CONSUMPTION);
     }
 
     public boolean economyCar() {
-        return (calculateConsumption() > CONS_15);
+        return (calculateConsumption() > MIN_ECONOMY_CONSUMPTION);
     }
 
     public void fillUp(int mileage, double liters) {
