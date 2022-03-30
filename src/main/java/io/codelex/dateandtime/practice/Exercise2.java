@@ -26,9 +26,13 @@ public class Exercise2 {
     static void getUpdateDates(LocalDate serverLaunched, int year, int month) {
         while (serverLaunched.isBefore(LocalDate.of(year, month + 1, 1))) {
             serverLaunched = serverLaunched.plusWeeks(2);
-            if (serverLaunched.getYear() == year && serverLaunched.getMonthValue() == month) {
+            if (matchesYearAndMonth(serverLaunched, year, month)) {
                 System.out.println(serverLaunched);
             }
         }
+    }
+
+    private static boolean matchesYearAndMonth(LocalDate serverLaunched, int year, int month) {
+        return serverLaunched.getYear() == year && serverLaunched.getMonthValue() == month;
     }
 }

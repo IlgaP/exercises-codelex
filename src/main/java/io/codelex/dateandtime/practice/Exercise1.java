@@ -32,17 +32,21 @@ public class Exercise1 {
         System.out.println(Exercise1.calculateHours(date1, date2));
     }
 
-    public static int calculateHours(LocalDate date1, LocalDate date2) {
+    private static int calculateHours(LocalDate date1, LocalDate date2) {
         int days = 0;
-        int hoursInDay = 8;
+        final int hoursInDay = 8;
 
         while (ChronoUnit.DAYS.between(date1, date2.plusDays(1)) > 0) {
-            if (!(date1.getDayOfWeek() == DayOfWeek.SATURDAY || date1.getDayOfWeek() == DayOfWeek.SUNDAY)) {
+            if (!isWorkday(date1)) {
                 days++;
             }
             date1 = date1.plusDays(1);
         }
         return days * hoursInDay;
+    }
+
+    private static boolean isWorkday(LocalDate date1) {
+        return date1.getDayOfWeek() == DayOfWeek.SATURDAY || date1.getDayOfWeek() == DayOfWeek.SUNDAY;
     }
 
 

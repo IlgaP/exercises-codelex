@@ -3,8 +3,8 @@ package io.codelex.dateandtime.practice;
 import java.time.LocalDate;
 
 public class DatePeriod {
-    LocalDate start;
-    LocalDate end;
+    private final LocalDate start;
+    private final LocalDate end;
 
     public DatePeriod(LocalDate start, LocalDate end) {
         this.start = start;
@@ -25,7 +25,9 @@ public class DatePeriod {
             return overlap3;
         } else if (overlap4 != null) {
             return overlap4;
-        } else return overlap5;
+        } else {
+            return overlap5;
+        }
     }
 
     private DatePeriod partiallyOverlap(DatePeriod date) {
