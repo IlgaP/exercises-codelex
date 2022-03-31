@@ -27,10 +27,10 @@ public class Staff {
 
         ((Executive) staffList[0]).awardBonus(500.00);
         ((Hourly) staffList[3]).addHours(40);
-//        ((Commission) staffList[6].addHours(35));
-//        ((Commission) staffList[6].addSales(400));
-//        ((Commission) staffList[7].addHours(40));
-//        ((Commission) staffList[7].addSales(950));
+        ((Commission) staffList[6]).addHours(35);
+        ((Commission) staffList[6]).addSales(400);
+        ((Commission) staffList[7]).addHours(40);
+        ((Commission) staffList[7]).addSales(950);
     }
 
     //-----------------------------------------------------------------
