@@ -23,7 +23,7 @@ public class Exercise2 {
             methodC();
         } catch (ArithmeticException e) {
             System.out.println(Arrays.toString(new Throwable().getStackTrace()));
-            throw new ArithmeticException("/ by zero");
+            throw e;
         }
     }
 
