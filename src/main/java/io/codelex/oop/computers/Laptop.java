@@ -22,11 +22,11 @@ public class Laptop extends Computer {
     @Override
     public String toString() {
         return "Laptop{" +
-                "processor='" + processor + '\'' +
-                ", ram=" + ram +
-                ", graphicsCard='" + graphicsCard + '\'' +
-                ", company='" + company + '\'' +
-                ", model='" + model + '\'' +
+                "processor='" + getProcessor() + '\'' +
+                ", ram=" + getRam() +
+                ", graphicsCard='" + getGraphicsCard() + '\'' +
+                ", company='" + getCompany() + '\'' +
+                ", model='" + getModel() + '\'' +
                 "battery='" + battery + '\'' +
                 '}';
     }

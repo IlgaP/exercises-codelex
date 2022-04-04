@@ -22,17 +22,17 @@ public class CarService {
         }
     }
 
-    public void withEngineV12() {
+    public void withEngineV12(EngineType engine) {
         for (Car car : cars) {
-            if (car.getEngineType() == EngineType.V12) {
+            if (car.getEngineType() == engine) {
                 System.out.println(car);
             }
         }
     }
 
-    public void before1999() {
+    public void before1999(int year) {
         for (Car car : cars) {
-            if (car.getYearOfManufacture() < 1999) {
+            if (car.getYearOfManufacture() < year) {
                 System.out.println(car);
             }
         }
@@ -48,9 +48,9 @@ public class CarService {
         System.out.println(cars.get(0));
     }
 
-    public void with3Manufacturers() {
+    public void withNManufacturers(int number) {
         for (Car car : cars) {
-            if (car.getManufacturer().size() >= 3) {
+            if (car.getManufacturer().size() >= number) {
                 System.out.println(car);
             }
         }
@@ -59,10 +59,10 @@ public class CarService {
     public void sortByName(String parameter) {
         if (parameter.equals("ascending")) {
             cars.sort((Car car1, Car car2) -> car1.getName().compareTo(car2.getName()));
-            cars.forEach(car -> System.out.println(car));
+            cars.forEach(System.out::println);
         } else {
             cars.sort((Car car1, Car car2) -> car2.getName().compareTo(car1.getName()));
-            cars.forEach(car -> System.out.println(car));
+            cars.forEach(System.out::println);
         }
     }
 
@@ -78,6 +78,13 @@ public class CarService {
         System.out.println("Enter manufacturer: ");
         String in = input.nextLine();
         boolean found = false;
+        found = isFoundCarByManufacturer(in, found);
+        if (!found) {
+            System.out.println("Nothing found!");
+        }
+    }
+
+    private boolean isFoundCarByManufacturer(String in, boolean found) {
         for (Car car : cars) {
             for (Manufacturer manufacturer : car.getManufacturer()) {
                 if (in.equals(manufacturer.getName())) {
@@ -86,9 +93,7 @@ public class CarService {
                 }
             }
         }
-        if (!found) {
-            System.out.println("Nothing found!");
-        }
+        return found;
     }
 
     public List<Car> manufacturedBy(Manufacturer manufacturer) {

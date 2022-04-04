@@ -37,10 +37,10 @@ public class Test {
         carService.addCar(car4);
 
         System.out.println("Engine V12:");
-        carService.withEngineV12();
+        carService.withEngineV12(EngineType.V12);
 
         System.out.println("Before 1999:");
-        carService.before1999();
+        carService.before1999(1999);
 
         System.out.println("Most expensive:");
         carService.mostExpensive();
@@ -49,7 +49,7 @@ public class Test {
         carService.cheapest();
 
         System.out.println("With at least 3 manufacturers:");
-        carService.with3Manufacturers();
+        carService.withNManufacturers(3);
 
         System.out.println("Sort by name");
         String ascending = "ascending";

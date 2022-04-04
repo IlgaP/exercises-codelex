@@ -4,11 +4,11 @@ import java.util.Objects;
 
 public class Computer {
 
-    protected String processor;
-    protected int ram;
-    protected String graphicsCard;
-    protected String company;
-    protected String model;
+    private String processor;
+    private int ram;
+    private String graphicsCard;
+    private String company;
+    private String model;
 
     public Computer(String processor, int ram, String graphicsCard, String company, String model) {
         this.processor = processor;

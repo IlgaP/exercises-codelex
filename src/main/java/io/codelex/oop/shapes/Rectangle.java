@@ -2,12 +2,12 @@ package io.codelex.oop.shapes;
 
 public class Rectangle extends Shape {
 
-    private static final int numSides = 4;
+    private static final int NUM_SIDES = 4;
     int width;
     int height;
 
     public Rectangle(int width, int height) {
-        super(numSides);
+        super(NUM_SIDES);
         this.height = height;
         this.width = width;
     }
