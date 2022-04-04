@@ -1,13 +1,15 @@
 package io.codelex.javaAdvancedTest.Exercise1;
 
+import java.math.BigDecimal;
+
 public class CreditCard extends Card {
-    public CreditCard(int number, String owner, String cvv, double balance) {
+    public CreditCard(int number, String owner, String cvv, BigDecimal balance) {
         super(number, owner, cvv, balance);
     }
 
     @Override
-    public void addMoney(double money) {
-        if (money > 10000) {
+    public void addMoney(BigDecimal money) {
+        if (getBalance().compareTo(new BigDecimal(10000)) > 0) {
             System.out.println(warning());
         } else {
             super.addMoney(money);
