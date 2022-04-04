@@ -26,7 +26,7 @@ public class ScissorPaperStone {
                 break;
             }
 
-            if (playerMove.equals(Move.STONE.getValue()) || playerMove.equals(Move.PAPER.getValue()) || playerMove.equals(Move.SCISSOR.getValue())) {
+            if (isValidInput(playerMove)) {
                 trials++;
                 String computerMove = getComputerMove();
 
@@ -52,13 +52,17 @@ public class ScissorPaperStone {
 
     }
 
+    private static boolean isValidInput(String playerMove) {
+        return playerMove.equals(Move.STONE.getValue()) || playerMove.equals(Move.PAPER.getValue()) || playerMove.equals(Move.SCISSOR.getValue());
+    }
+
     private static String getComputerMove() {
         Random random = new Random();
         int randomNumber = random.nextInt(3);
         return Move.values()[randomNumber].getValue();
     }
 
-    public static boolean isWinnerPlayer(String playerMove, String computerMove) {
+    private static boolean isWinnerPlayer(String playerMove, String computerMove) {
         return playerMove.equals(Move.STONE.getValue()) && computerMove.equals(Move.SCISSOR.getValue())
                 || playerMove.equals(Move.SCISSOR.getValue()) && computerMove.equals(Move.PAPER.getValue())
                 || playerMove.equals(Move.PAPER.getValue()) && computerMove.equals(Move.STONE.getValue());

@@ -7,20 +7,21 @@ public enum CardinalPoint {
     East("right", 2),
     West("left", 3);
 
-    final String direction;
     final int number;
+    private final String direction;
 
     CardinalPoint(String direction, int number) {
         this.direction = direction;
         this.number = number;
     }
 
-    String direction() {
+    String getDirection() {
         return direction;
     }
 
-    int number() {
+    public int getNumber() {
         return number;
     }
+
 }
 
