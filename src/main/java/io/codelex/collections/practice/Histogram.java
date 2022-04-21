@@ -13,10 +13,9 @@ public class Histogram {
 
     public static void main(String[] args) throws IOException, URISyntaxException {
         final String scores = fileContent();
-        //System.out.println(scores);
-        final int RANGE_COUNT = 11;
+        final int rangeCount = 11;
 
-        int[] rangeArr = new int[RANGE_COUNT];
+        int[] rangeArr = new int[rangeCount];
         for (int i : rangeArr) {
             rangeArr[i] = 0;
         }

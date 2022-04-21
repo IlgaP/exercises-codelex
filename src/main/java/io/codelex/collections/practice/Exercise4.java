@@ -17,8 +17,7 @@ public class Exercise4 {
             names.add(name);
         }
         System.out.print("Unique name list contains: ");
-        for (String name : names
-        ) {
+        for (String name : names) {
             System.out.print(name + " ");
         }
 

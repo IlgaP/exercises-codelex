@@ -8,27 +8,28 @@ public class HappyNumber {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter number: ");
-        int n = input.nextInt();
+        int inputNumber = input.nextInt();
         Set<Integer> sums = new HashSet<>();
+        int number = inputNumber;
         while (true) {
-            n = numSquareSum(n);
-            if (n == 1) {
-                System.out.println("happy");
+            number = numSquareSum(number);
+            if (number == 1) {
+                System.out.println(inputNumber + " is happy");
                 break;
             }
-            if (sums.contains(n)) {
-                System.out.println("not happy");
+            if (sums.contains(number)) {
+                System.out.println(inputNumber + " is not happy");
                 break;
             }
-            sums.add(n);
+            sums.add(number);
         }
     }
 
-    static int numSquareSum(int n) {
+    private static int numSquareSum(int number) {
         int squareSum = 0;
-        while (n != 0) {
-            squareSum += (n % 10) * (n % 10);
-            n = n / 10;
+        while (number != 0) {
+            squareSum += (number % 10) * (number % 10);
+            number = number / 10;
         }
         return squareSum;
     }
