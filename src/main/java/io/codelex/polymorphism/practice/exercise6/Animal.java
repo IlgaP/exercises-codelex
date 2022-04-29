@@ -1,10 +1,10 @@
 package io.codelex.polymorphism.practice.exercise6;
 
 public abstract class Animal {
-    protected String animalName;
-    protected String animalType;
-    protected double animalWeight;
     protected Integer foodEaten;
+    private String animalName;
+    private String animalType;
+    private double animalWeight;
 
     public Animal(String animalName, String animalType, double animalWeight, Integer foodEaten) {
         this.animalName = animalName;
