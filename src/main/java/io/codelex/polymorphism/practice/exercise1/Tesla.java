@@ -8,18 +8,22 @@ public class Tesla implements Car {
         this.name = name;
     }
 
+    @Override
     public void speedUp() {
         currentSpeed += 20;
     }
 
+    @Override
     public void slowDown() {
         currentSpeed += 20;
     }
 
+    @Override
     public int showCurrentSpeed() {
         return currentSpeed;
     }
 
+    @Override
     public void startEngine() {
         System.out.println("-- silence ---");
     }

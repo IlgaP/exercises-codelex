@@ -8,18 +8,22 @@ public class Bmw implements Car {
         this.name = name;
     }
 
+    @Override
     public void speedUp() {
         currentSpeed += 12;
     }
 
+    @Override
     public void slowDown() {
         currentSpeed += 12;
     }
 
+    @Override
     public int showCurrentSpeed() {
         return currentSpeed;
     }
 
+    @Override
     public void startEngine() {
         System.out.println("Rrrrrrr.....");
     }
